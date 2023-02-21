@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+
 
 export default function About(props) {
   return (
@@ -28,13 +28,14 @@ export default function About(props) {
           easily. Our application offers a range of useful text utilities,
           including: Text case converter: Convert text to upper case, lower
           case, sentence case, and more Text counter: Count the number of words,
-          characters, sentences, and paragraphs in your text Lorem ipsum
-          generator: Generate dummy text to use as filler content URL
-          encoder/decoder: Encode or decode URLs for safe use in web addresses
+          characters, sentences.
           Our team is dedicated to providing you with the best possible text
           utilities, and we're always looking for ways to improve and expand our
           application. If you have any feedback, suggestions, or feature
-          requests, please don't hesitate to reach out to us. Thank you for
+          requests, please don't hesitate to reach out to us. 
+          
+          
+          Thank you for
           choosing Text Utilities!
         </h4>
         <br></br>
