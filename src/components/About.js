@@ -1,139 +1,45 @@
 import React, { useState } from "react";
 
-export default function About() {
-    const [myStyle, setmyStyle] = useState(
-     {
-        color:'black',
-        backgroundColor:'white'
-    }
-    )
-    const [btntext, setBtntext] = useState("Enable Dark Mode")
-    const togglestyle=()=>{
-        if(myStyle.color=='white')
-        {
-            setmyStyle(
-                {
-                    color:'black',
-                    backgroundColor:'white'
-                }
-            )
-            setBtntext("Enable Dark Mode")
-        }
-        else{
-            setmyStyle({
-                color:'white',
-                backgroundColor:'blue'
-            })
-            setBtntext("Enable Light Mode")
-        }
-    }
-
-
+export default function About(props) {
   return (
-    <div className="container" style={myStyle}>
-        <h1 className="my-2">About Us</h1>
-      <div className="accordion" id="accordionExample">
-        <div className="accordion-item">
-          <h2 className="accordion-header" id="headingOne">
-            <button
-              className="accordion-button"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseOne"
-              aria-expanded="true"
-              aria-controls="collapseOne"
-              style={myStyle}
-            >
-              Accordion Item #1
-            </button>
-          </h2>
-          <div
-            id="collapseOne"
-            className="accordion-collapse collapse show"
-            aria-labelledby="headingOne"
-            data-bs-parent="#accordionExample"
-          >
-            <div className="accordion-body" style={myStyle}>
-              <strong>This is the first item's accordion body.</strong> It is
-              shown by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
-            </div>
-          </div>
-        </div>
-        <div className="accordion-item">
-          <h2 className="accordion-header" id="headingTwo">
-            <button
-              className="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseTwo"
-              aria-expanded="false"
-              aria-controls="collapseTwo"
-              style={myStyle}
-            >
-              Accordion Item #2
-            </button>
-          </h2>
-          <div
-            id="collapseTwo"
-            className="accordion-collapse collapse"
-            aria-labelledby="headingTwo"
-            data-bs-parent="#accordionExample"
-          >
-            <div className="accordion-body" style={myStyle}>
-              <strong>This is the second item's accordion body.</strong> It is
-              hidden by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
-            </div>
-          </div>
-        </div>
-        <div className="accordion-item">
-          <h2 className="accordion-header" id="headingThree">
-            <button
-              className="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseThree"
-              aria-expanded="false"
-              aria-controls="collapseThree"
-              style={myStyle}
-            >
-              Accordion Item #3
-            </button>
-          </h2>
-          <div
-            id="collapseThree"
-            className="accordion-collapse collapse"
-            aria-labelledby="headingThree"
-            data-bs-parent="#accordionExample"
-          >
-            <div className="accordion-body" style={myStyle}>
-              <strong>This is the third item's accordion body.</strong> It is
-              hidden by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
-            </div>
-          </div>
-        </div>
+    <div
+      className="container"
+      style={{
+        backgroundColor: props.mode === "light" ? "white" : "#17104e",
+        color: props.mode === "dark" ? "white" : "black",
+      }}
+    >
+      <h1 className="my-2 text-center mb-4">About Us</h1>
+      <br></br>
+      <div
+        className="Content  my-4 "
+        style={{
+          backgroundColor: props.mode === "light" ? "white" : "#17104e",
+          color: props.mode === "dark" ? "white" : "black",
+        }}
+      >
+        <h4>
+          Welcome to our Text Utilities application! We're excited to
+          help you simplify and enhance your text editing experience. Our
+          application was developed by Kaustubh Pathak, a passionate software
+          developer with years of experience building innovative and
+          user-friendly applications. The goal of Text Utilities is to provide a
+          set of tools that help you format and manipulate your text quickly and
+          easily. Our application offers a range of useful text utilities,
+          including: Text case converter: Convert text to upper case, lower
+          case, sentence case, and more Text counter: Count the number of words,
+          characters, sentences, and paragraphs in your text Lorem ipsum
+          generator: Generate dummy text to use as filler content URL
+          encoder/decoder: Encode or decode URLs for safe use in web addresses
+          Our team is dedicated to providing you with the best possible text
+          utilities, and we're always looking for ways to improve and expand our
+          application. If you have any feedback, suggestions, or feature
+          requests, please don't hesitate to reach out to us. Thank you for
+          choosing Text Utilities!
+        </h4>
+        <br></br>
+        <strong className="text-center"><p>Designed and Developed By Kaustubh Pathak</p></strong>
       </div>
-      <div className="container my-3">
-      <button type="button" className="btn btn-primary" onClick={togglestyle}>{btntext}</button>
-      </div>
-      
     </div>
   );
 }
